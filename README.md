@@ -300,3 +300,9 @@ src/
     ├── schemas.ts      zod request validation
     └── firebase.*.ts   client and admin initialization
 ```
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE).
