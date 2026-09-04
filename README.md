@@ -8,7 +8,7 @@ judgment is as good as you think it is.
 
 ![Gutcheck landing page](docs/images/hero.png)
 
-**[Watch the 2:36 walkthrough](REPLACE_WITH_VIDEO_URL)** — recorded against the
+**[Watch the 2:36 walkthrough](https://x.com/BalajiT07/status/2095898034676858898)** — recorded against the
 live deployment, with real Gemini responses.
 
 ---
