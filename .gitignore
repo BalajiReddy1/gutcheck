@@ -45,3 +45,7 @@ skills-lock.json
 # Submission paperwork. Kept locally, not part of the public project.
 CUSTOM_INSTRUCTIONS.md
 docs/SUBMISSION.md
+
+# Local recording and demo tooling, not part of the project.
+seed.local.mjs
+docs/*.mp4
