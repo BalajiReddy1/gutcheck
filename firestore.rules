@@ -1,0 +1,38 @@
+rules_version = '2';
+
+// Gutcheck — strict per-user isolation.
+//
+// Architecture note: all reads/writes in the app go through Next.js API routes
+// authenticated with the Firebase Admin SDK (which bypasses these rules). These
+// rules are the defense-in-depth layer: if the client SDK is ever used directly,
+// a user can only ever touch documents under their own uid, and never another
+// user's. There are no public or "if true" paths anywhere.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId);
+
+      // Journal entries, decisions, digests, mood samples — all owner-bound.
+      match /interactions/{interactionId} {
+        allow read, write: if isOwner(userId);
+      }
+      match /decisions/{decisionId} {
+        allow read, write: if isOwner(userId);
+      }
+      match /digests/{digestId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Everything not explicitly matched above is denied.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

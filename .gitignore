@@ -1,0 +1,47 @@
+node_modules
+.next
+out
+dist
+coverage
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
+
+# ---------------------------------------------------------------- secrets
+# .env holds the Gemini key and, optionally, a service account. Never commit it.
+.env
+.env.local
+.env*.local
+.env.development
+.env.test
+
+# .env.production is the deliberate exception: it holds ONLY the four public
+# NEXT_PUBLIC_FIREBASE_* values, which must be present at image build time to be
+# inlined into the browser bundle. It is committed on purpose. Keep it that way,
+# and keep everything else out of it.
+!.env.production
+
+# Credential files, in case one is ever downloaded into the project.
+serviceAccountKey.json
+*-service-account.json
+*serviceaccount*.json
+application_default_credentials.json
+*.pem
+*.p12
+*.key
+
+# ------------------------------------------------------------------ tooling
+.firebase
+.vscode
+.idea
+
+# Local AI-agent configuration and skill packs. Developer tooling, not product.
+.claude
+.agents
+.codex
+.impeccable
+skills-lock.json
+
+# Submission paperwork. Kept locally, not part of the public project.
+CUSTOM_INSTRUCTIONS.md
+docs/SUBMISSION.md
