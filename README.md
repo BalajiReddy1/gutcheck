@@ -12,7 +12,7 @@ judgment is as good as you think it is.
 
 ## The problem
 
-Hindsight bias rewrites memory. Once you know how something turned out, you
+Knowing the outcome rewrites the memory. Once something has happened you
 remember having expected it all along, so the feedback loop that would make you
 a better decision-maker never closes. Most people are also measurably
 overconfident: when they say they are 90% sure, they are right closer to 75% of
